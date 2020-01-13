@@ -22,16 +22,17 @@ namespace ATCOWeb
 
                 dt.Columns.Add("Id");
                 dt.Columns.Add("Name");
-               
+                dt.Columns.Add("Cert id");
                 dt.Columns.Add("Date");
                 dt.Columns.Add("Hours");
-                foreach (var item in employees)
+                foreach (ATCO item in employees)
                 {
                     var row = dt.NewRow();
 
                     row["Id"] = item.Id;
                     row["Name"] = item.Name;
                     DateTime datetime = DateTime.Parse(Session["Date"].ToString());
+                    row["Cert id"] = item.CertificateId;
                     row["Date"] = datetime;
                     row["Hours"] = item.HoursWorked[datetime];
 

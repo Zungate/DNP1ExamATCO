@@ -7,6 +7,7 @@ namespace AtcoDataLibrary
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        
         public Dictionary<DateTime, double> HoursWorked { get; set; }
 
         public Employee(int id, string name)
